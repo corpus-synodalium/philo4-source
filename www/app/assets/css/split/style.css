@@ -27,7 +27,7 @@
 
 .navbar-right {
     font-size: 1em;
-    font-variant: small-caps;
+    font-variant: all-small-caps;
     margin-right: -10px !important;
     white-space: nowrap;
 }
@@ -38,7 +38,7 @@
 
 .navbar-left {
     font-size: 1em;
-    font-variant: small-caps;
+    font-variant: all-small-caps;
     margin-left: -10px !important;
 }
 
@@ -48,6 +48,7 @@
 
 #header-report-error {
     position: absolute;
+    font-variant: all-small-caps;
     bottom: 0px;
     right: 0;
     font-size: 110%;
