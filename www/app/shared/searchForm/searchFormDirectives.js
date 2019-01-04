@@ -48,6 +48,9 @@
             for (var i = 0; i < $rootScope.philoConfig.search_reports.length; i++) {
                 var value = $rootScope.philoConfig.search_reports[i];
                 var label = value.replace('_', ' ');
+                if (value == 'kwic') {
+                    label = 'keywords in context (kwic)'
+                }
                 reports.push({
                     value: value,
                     label: label
