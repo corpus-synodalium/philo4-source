@@ -253,7 +253,8 @@
     display: inline-block;
     text-align: justify;
     padding: 20px;
-    line-height: 140% !important;
+    line-height: 150% !important;
+    font-size: 1.1em;
 }
 
 @media (max-width: 992px) {
@@ -284,7 +285,7 @@ b.headword {
     font-weight: 700 !important;
     font-size: 130%;
     display: block;
-    margin-top: 20px;
+    margin: 20px 0px;
 }
 
 #bibliographic-results b.headword {
