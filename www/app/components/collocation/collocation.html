@@ -1,10 +1,10 @@
-<div id="collocation-container" ng-controller="CollocationController as collocation">    
+<div id="collocation-container" ng-controller="CollocationController as collocation">
     <div id="philo-view" class="panel panel-default" ng-if="collocation.authorized">
         <div id="initial_report">
             <div id="description">
-                <button type="button" id="export-results" class="btn btn-default btn-xs pull-right" data-toggle="modal" data-target="#export-dialog">
+                <!-- <button type="button" id="export-results" class="btn btn-default btn-xs pull-right" data-toggle="modal" data-target="#export-dialog">
                     Export results
-                </button>
+                </button> -->
                 <search-arguments></search-arguments>
             </div>
             <progress-bar progress="{{ collocation.percent }}" class="velocity-opposites-transition-slideDownIn" data-velocity-opts="{ duration: 400 }" ng-if="collocation.done === false"></progress-bar>
