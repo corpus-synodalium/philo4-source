@@ -3,9 +3,11 @@
         <div class="panel panel-default">
             <div id="initial_report">
                 <div id="description" ng-if="typeof(concKwic.results) != 'undefined'" class="velocity-opposites-transition-fadeIn">
-                    <button type="button" id="export-results" class="btn btn-default btn-xs pull-right hidden-xs" data-toggle="modal" data-target="#export-dialog">
+                    <!-- <button type="button" id="export-results" class="btn btn-default btn-xs pull-right hidden-xs" data-toggle="modal" data-target="#export-dialog">
                             Export results
-                    </button>
+                    </button> -->
+                    <button type="button" class="btn btn-default btn-xs pull-right hidden-xs"><a class="export-button" ng-href="https://cosyn-export.netlify.com?url={{ concKwic.currentURL }}" target="_blank">Export Record IDs</a></button>
+                    <button type="button" class="btn btn-default btn-xs pull-right hidden-xs"><a class="export-button" ng-href="https://cosyn.app?url={{ concKwic.currentURL }}" target="_blank">Map All Results</a></button>
                     <search-arguments></search-arguments>
                     <results-description description="{{ concKwic.description }}" query-status="{{ concKwic.loading }}"></results-description>
                 </div>

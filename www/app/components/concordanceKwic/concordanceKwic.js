@@ -59,5 +59,7 @@
             console.log(returnValue)
             return returnValue
         }
+
+        vm.currentURL = encodeURIComponent($location.absUrl());
     }
 })();
