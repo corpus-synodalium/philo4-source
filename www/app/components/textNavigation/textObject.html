@@ -13,7 +13,10 @@
                 <div id="previous-graphics" ng-if="beforeGraphicsImgs">
                     <a href="{{ img[0] }}" large-img="{{img[1]}}" class="inline-img" ng-repeat="img in beforeGraphicsImgs track by $index" data-gallery></a>
                 </div>
-                <button id="metadata-toggle-btn" ng-click="toggleMetadataPanel()">Show metadata</button>
+                <button 
+                    id="metadata-toggle-btn"
+                    ng-click="textNav.toggleMetadataPanel($event)"
+                >Toggle metadata panel</button>
                 <div
                     id="metadata-panel"
                     class="metadata-panel-box-shadow"

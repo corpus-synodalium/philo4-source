@@ -134,5 +134,12 @@
             var philoID = $location.path().split('/')[2];
             dictionaryLookup.evaluate(event, year);
         }
+
+        vm.toggleMetadataPanel = function(e) {
+            console.log(e);
+            var oldDisplay = document.getElementById('metadata-frame').style.display;
+            var newDisplay = oldDisplay === 'none' ? 'block' : 'none';
+            document.getElementById('metadata-frame').style.display = newDisplay;
+        }
     }
 })();
