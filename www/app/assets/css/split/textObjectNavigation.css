@@ -669,7 +669,7 @@ b.headword[rend=center] {
 }
 
 /* Metadata frame on the left */
-#metadata-frame {
+#metadata-panel {
   position: fixed;
   top: 0;
   left: 0;
@@ -685,7 +685,7 @@ b.headword[rend=center] {
   text-align: left;
 }
 
-#metadata-trigger-btn {
+#metadata-toggle-btn {
     position: fixed;
     padding-bottom: 5px;
     top: 50%;
@@ -726,7 +726,7 @@ b.headword[rend=center] {
   transform: rotate(-45deg);
 }
 
-.metadata-frame-box-shadow {
+.metadata-panel-box-shadow {
   -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   -ms-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);

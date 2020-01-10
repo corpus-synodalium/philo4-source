@@ -13,10 +13,10 @@
                 <div id="previous-graphics" ng-if="beforeGraphicsImgs">
                     <a href="{{ img[0] }}" large-img="{{img[1]}}" class="inline-img" ng-repeat="img in beforeGraphicsImgs track by $index" data-gallery></a>
                 </div>
-                <button id="metadata-trigger-btn" ng-click="triggerMetadataPanel()">Show metadata</button>
+                <button id="metadata-toggle-btn" ng-click="toggleMetadataPanel()">Show metadata</button>
                 <div
-                    id="metadata-frame"
-                    class="metadata-frame-box-shadow"
+                    id="metadata-panel"
+                    class="metadata-panel-box-shadow"
                     ng-bind-html="metadataObject.text | unsafe"
                     compile-template
                     philo-id="{{ metadataPhiloId }}">

@@ -134,9 +134,5 @@
             var philoID = $location.path().split('/')[2];
             dictionaryLookup.evaluate(event, year);
         }
-
-        vm.triggerMetadataPanel = function(e) {
-            console.log(e);
-        }
     }
 })();

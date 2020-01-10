@@ -148,11 +148,21 @@
                 }
             }
         }
+        var initEventListeners = function(scope) {
+            scope.toggleMetadataPanel = function(e) {
+                console.log(e);
+                var oldDisplay = document.getElementById('metadata-frame').style.display;
+                var newDisplay = oldDisplay === 'none' ? 'block' : 'none';
+                document.getElementById('metadata-frame').style.display = newDisplay;
+            }
+        }
+        
         return {
             templateUrl: 'app/components/textNavigation/textObject.html',
             replace: true,
             link: function(scope, element, attrs) {
                 getTextObject(scope);
+                initEventListeners(scope);
             }
         }
     }
