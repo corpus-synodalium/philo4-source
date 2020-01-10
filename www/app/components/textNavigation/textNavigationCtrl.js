@@ -63,6 +63,7 @@
         vm.tocOpen = false;
         vm.tocDone = false // Only fetch TOC once navBar has been drawn
         vm.textRendered = false;
+        vm.showMetadataPanel = true;
 
         vm.philoId = $routeParams.pathInfo.replace('/', ' ');
 
@@ -137,9 +138,7 @@
 
         vm.toggleMetadataPanel = function(e) {
             console.log(e);
-            var oldDisplay = document.getElementById('metadata-frame').style.display;
-            var newDisplay = oldDisplay === 'none' ? 'block' : 'none';
-            document.getElementById('metadata-frame').style.display = newDisplay;
+            vm.showMetadataPanel = !showMetadataPanel;
         }
     }
 })();

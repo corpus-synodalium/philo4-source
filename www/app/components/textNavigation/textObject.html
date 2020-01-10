@@ -20,6 +20,7 @@
                 <div
                     id="metadata-panel"
                     class="metadata-panel-box-shadow"
+                    ng-show="textNav.showMetadataPanel"
                     ng-bind-html="metadataObject.text | unsafe"
                     compile-template
                     philo-id="{{ metadataPhiloId }}">
