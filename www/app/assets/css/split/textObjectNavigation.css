@@ -667,3 +667,59 @@ b.headword[rend=center] {
     padding-top: inherit;  /*inherit padding when image is above */
     padding-bottom: inherit;
 }
+
+/* Metadata frame on the left */
+#metadata-frame {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 9999;
+  background: #212121;
+  min-width: 250px;
+  max-width: 25%;
+  padding: 20px;
+  overflow-y: scroll;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  text-align: left;
+}
+
+#metadata-close-btn {
+  position: absolute;
+  right: 32px;
+  top: 32px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
+}
+
+#metadata-close-btn:hover {
+  opacity: 1;
+}
+
+#metadata-close-btn:before,
+#metadata-close-btn:after {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 33px;
+  width: 2px;
+  background-color: #fff;
+}
+
+#metadata-close-btn:before {
+  transform: rotate(45deg);
+}
+
+#metadata-close-btn:after {
+  transform: rotate(-45deg);
+}
+
+.metadata-frame-box-shadow {
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  -moz-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  -ms-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  -o-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}

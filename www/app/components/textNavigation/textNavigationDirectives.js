@@ -21,6 +21,9 @@
             scope.textNav.textRendered = false;
             scope.textObjectURL = $routeParams;
             scope.philoID = scope.textObjectURL.pathInfo.split('/').join(' ');
+            /* We take advantage of the fact that
+               metadata page is always page #1 */
+            scope.metadataPhiloID = scope.philoID.split(" ")[0] + " 1";
             if ("byte" in scope.textObjectURL) {
                 scope.byteOffset = scope.textObjectURL.byte;
             } else {
@@ -62,6 +65,18 @@
                     }
                     insertPageLinks(scope, response.data.imgs);
                     insertInlineImgs(scope, response.data.imgs);
+                })
+                .catch(function(response) {
+                    scope.textNav.loading = false;
+                });
+            /* Request metadata text object */
+            request.report({
+                    report: "navigation",
+                    philo_id: scope.metadataPhiloID,
+                    byte: scope.byteOffset
+                })
+                .then(function(response) {
+                    scope.metadataObject = response.data;
                 })
                 .catch(function(response) {
                     scope.textNav.loading = false;

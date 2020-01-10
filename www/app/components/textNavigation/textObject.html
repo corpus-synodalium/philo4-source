@@ -13,6 +13,13 @@
                 <div id="previous-graphics" ng-if="beforeGraphicsImgs">
                     <a href="{{ img[0] }}" large-img="{{img[1]}}" class="inline-img" ng-repeat="img in beforeGraphicsImgs track by $index" data-gallery></a>
                 </div>
+                <div
+                    id="metadata-frame"
+                    class="metadata-frame-box-shadow"
+                    ng-bind-html="metadataObject.text | unsafe"
+                    compile-template
+                    philo-id="{{ metadataPhiloId }}">
+                </div>
                 <div id="text-obj-content" class="panel panel-default text-content-area" ng-bind-html="textObject.text | unsafe" compile-template select-word philo-id="{{ philoID }}" ng-keydown="textNav.dicoLookup($event, textObject.metadata_fields.year)" tabindex="0"></div>
                 <div id="next-pages" ng-if="afterObjImgs">
                     <span class="xml-pb-image">
