@@ -138,7 +138,7 @@
 
         vm.toggleMetadataPanel = function(e) {
             console.log(e);
-            vm.showMetadataPanel = !showMetadataPanel;
+            vm.showMetadataPanel = !vm.showMetadataPanel;
         }
     }
 })();
