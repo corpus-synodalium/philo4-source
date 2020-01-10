@@ -685,6 +685,16 @@ b.headword[rend=center] {
   text-align: left;
 }
 
+#metadata-trigger-btn {
+    position: fixed;
+    padding-bottom: 5px;
+    top: 50%;
+    right: 0;
+    transform: rotate(-90deg);
+    transform-origin: right bottom;
+    border-radius: 3px 3px 0px 0px;
+}
+
 #metadata-close-btn {
   position: absolute;
   right: 32px;
