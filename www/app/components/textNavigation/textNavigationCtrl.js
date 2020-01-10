@@ -63,7 +63,7 @@
         vm.tocOpen = false;
         vm.tocDone = false // Only fetch TOC once navBar has been drawn
         vm.textRendered = false;
-        vm.showMetadataPanel = true;
+        vm.showMetadataPanel = false;
 
         vm.philoId = $routeParams.pathInfo.replace('/', ' ');
 
@@ -137,8 +137,8 @@
         }
 
         vm.toggleMetadataPanel = function(e) {
-            console.log(e);
             vm.showMetadataPanel = !vm.showMetadataPanel;
+            angular.element('#text-obj-content')[0].style.marginLeft = (vm.showMetadataPanel) ? "30%" : "0";
         }
     }
 })();
