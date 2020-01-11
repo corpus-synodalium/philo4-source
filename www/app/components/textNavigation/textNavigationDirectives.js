@@ -85,7 +85,9 @@
                         var key = text.substring(3, colonIndex);
                         var value = text.substring(colonIndex + 2);
                         return '<tr><td>' + key + '</td><td>' + value + '</td></tr>';
-                    }).reduce((combined, curr) => combined.concat(curr), '');
+                    }).reduce(function(combined, curr) {
+                        return combined.concat(curr);
+                    }, '');
 
                     scope.metadataObject = {};
                     scope.metadataObject.text = '<h2>Metadata</h2><table class="metadata-table"><tbody>' +
