@@ -704,7 +704,7 @@ b.headword[rend=center] {
 
 #metadata-toggle-btn {
     position: fixed;
-    padding-bottom: 5px;
+    padding: 8px;
     top: 50%;
     right: 0;
     transform: rotate(-90deg);
