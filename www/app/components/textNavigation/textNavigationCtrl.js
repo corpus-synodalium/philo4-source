@@ -63,6 +63,7 @@
         vm.tocOpen = false;
         vm.tocDone = false // Only fetch TOC once navBar has been drawn
         vm.textRendered = false;
+        vm.showMetadataPanel = false;
 
         vm.philoId = $routeParams.pathInfo.replace('/', ' ');
 
@@ -133,6 +134,13 @@
         vm.dicoLookup = function(event, year) {
             var philoID = $location.path().split('/')[2];
             dictionaryLookup.evaluate(event, year);
+        }
+
+        vm.toggleMetadataPanel = function(e) {
+            vm.showMetadataPanel = !vm.showMetadataPanel;
+            e.target.className = (vm.showMetadataPanel) ? "toggled" : "";
+            angular.element('#text-obj-content')[0].style.marginLeft = (vm.showMetadataPanel) ? "30%" : "";
+            angular.element('#text-obj-content')[0].style.minWidth = (vm.showMetadataPanel) ? "40vw" : "";
         }
     }
 })();

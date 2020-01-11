@@ -13,6 +13,18 @@
                 <div id="previous-graphics" ng-if="beforeGraphicsImgs">
                     <a href="{{ img[0] }}" large-img="{{img[1]}}" class="inline-img" ng-repeat="img in beforeGraphicsImgs track by $index" data-gallery></a>
                 </div>
+                <button 
+                    id="metadata-toggle-btn"
+                    ng-click="textNav.toggleMetadataPanel($event)"
+                >Toggle metadata panel</button>
+                <div
+                    id="metadata-panel"
+                    class="metadata-panel-box-shadow"
+                    ng-show="textNav.showMetadataPanel"
+                    ng-bind-html="metadataObject.text | unsafe"
+                    compile-template
+                    philo-id="{{ metadataPhiloId }}">
+                </div>
                 <div id="text-obj-content" class="panel panel-default text-content-area" ng-bind-html="textObject.text | unsafe" compile-template select-word philo-id="{{ philoID }}" ng-keydown="textNav.dicoLookup($event, textObject.metadata_fields.year)" tabindex="0"></div>
                 <div id="next-pages" ng-if="afterObjImgs">
                     <span class="xml-pb-image">

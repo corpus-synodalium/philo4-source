@@ -21,6 +21,9 @@
             scope.textNav.textRendered = false;
             scope.textObjectURL = $routeParams;
             scope.philoID = scope.textObjectURL.pathInfo.split('/').join(' ');
+            /* We take advantage of the fact that
+               metadata page is always page #1 */
+            scope.metadataPhiloID = scope.philoID.split(" ")[0] + " 1";
             if ("byte" in scope.textObjectURL) {
                 scope.byteOffset = scope.textObjectURL.byte;
             } else {
@@ -62,6 +65,31 @@
                     }
                     insertPageLinks(scope, response.data.imgs);
                     insertInlineImgs(scope, response.data.imgs);
+                })
+                .catch(function(response) {
+                    scope.textNav.loading = false;
+                });
+            /* Request metadata text object */
+            request.report({
+                    report: "navigation",
+                    philo_id: scope.metadataPhiloID,
+                    byte: scope.byteOffset
+                })
+                .then(function(response) {
+                    var responseHTML = response.data.text;
+                    /**
+                     * Convert <p> tags to a table
+                     */
+                    var replacedPTags = responseHTML.match(/<p>(.*?)<\/p>/g).map(function(text) {
+                        var colonIndex = text.indexOf(':');
+                        var key = text.substring(3, colonIndex);
+                        var value = text.substring(colonIndex + 2);
+                        return '<tr><td>' + key + '</td><td>' + value + '</td></tr>';
+                    }).reduce((combined, curr) => combined.concat(curr), '');
+
+                    scope.metadataObject = {};
+                    scope.metadataObject.text = '<h2>Metadata</h2><table class="metadata-table"><tbody>' +
+                        replacedPTags + '</tbody></table>';
                 })
                 .catch(function(response) {
                     scope.textNav.loading = false;
@@ -133,6 +161,7 @@
                 }
             }
         }
+
         return {
             templateUrl: 'app/components/textNavigation/textObject.html',
             replace: true,
