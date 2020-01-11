@@ -698,10 +698,10 @@ b.headword[rend=center] {
     transform: rotate(-90deg);
     transform-origin: right bottom;
     border-radius: 3px 3px 0px 0px;
-    transition: background-color 0.5s ease-out, color 0.5s ease-out;
+    transition: background-color 0.3s ease-out, color 0.3s ease-out;
 }
 
-#metadata-toggle-btn:hover {
+#metadata-toggle-btn.toggled {
     color: #fff;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     background-color: #212121;
