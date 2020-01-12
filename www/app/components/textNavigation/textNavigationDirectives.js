@@ -84,6 +84,17 @@
                         var colonIndex = text.indexOf(':');
                         var key = text.substring(3, colonIndex);
                         var value = text.substring(colonIndex + 2);
+                        // Convert links in Source_URL and Source_URL2
+                        var getSourceTableRow = function(text, value) {
+                            var url = value.substring(0, value.length - 4);
+                            var link = '<a class="link-on-dark" href="' + url + '" target="_blank">link</a>';
+                            return '<tr><td class="metadata-source-link">' + text + '</td><td class="metadata-source-link">' + link + '</td></tr>';
+                        }
+                        if (key === 'Source_URL') {
+                            return getSourceTableRow('Source 1', value);
+                        } else if (key === 'Source_URL2') {
+                            return getSourceTableRow('Source 2', value);
+                        }
                         return '<tr><td>' + key + '</td><td>' + value + '</td></tr>';
                     }).reduce(function(combined, curr) {
                         return combined.concat(curr);

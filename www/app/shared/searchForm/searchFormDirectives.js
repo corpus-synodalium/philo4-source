@@ -56,6 +56,10 @@
                     label: label
                 });
             }
+            // Note (thawsitt): Triggering click when report type is changed
+            $timeout(function() {
+                angular.element('.input-group-btn #button-search')[0].trigger('click');
+            }, 0);
             return reports
         }
         return {
