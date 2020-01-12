@@ -677,7 +677,7 @@ b.headword[rend=center] {
   z-index: 9999;
   background: #212121;
   min-width: 250px;
-  max-width: 25%;
+  max-width: 30%;
   padding: 20px;
   overflow-y: scroll;
   color: #fff;
