@@ -32,7 +32,7 @@
         };
     }
 
-    function searchReports($rootScope, $location) {
+    function searchReports($rootScope, $location, $timeout) {
         var reportChange = function (report) {
             if (report === 'landing_page') {
                 report = $rootScope.philoConfig.search_reports[0];
