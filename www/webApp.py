@@ -133,8 +133,8 @@ def load_CSS():
     else:
         css_links = concat_CSS()
     if config.production:
-        # Cache bust CSS by bumping version number
-        return '<link rel="stylesheet" href="app/assets/css/philoLogic.css?v=1.0.0">'
+        # Note (thawsitt): Bust CSS cache by bumping version number
+        return '<link rel="stylesheet" href="app/assets/css/philoLogic.css?v=1.0.1">'
     else:
         return '\n'.join(css_links)
 
