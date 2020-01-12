@@ -90,7 +90,8 @@
                     }, '');
 
                     scope.metadataObject = {};
-                    scope.metadataObject.text = '<h2>Metadata</h2><table class="metadata-table"><tbody>' +
+                    var linkToGuide = '<p id="link-to-documentation">For further guidance, click <a href="https://corpus-synodalium.com/pages/documentation.html" target="_blank">here</a>.</p>';
+                    scope.metadataObject.text = '<div id="metadata-panel-header"><h2>Metadata</h2>' + linkToGuide + '</div><table class="metadata-table"><tbody>' +
                         replacedPTags + '</tbody></table>';
                 })
                 .catch(function(response) {
