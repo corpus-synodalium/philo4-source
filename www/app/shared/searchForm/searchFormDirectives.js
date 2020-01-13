@@ -32,8 +32,8 @@
         };
     }
 
-    function searchReports($rootScope, $location) {
-        var reportChange = function (report) {
+    function searchReports($rootScope, $location, $timeout) {
+        var reportChange = function (report, shouldTriggerSearch) {
             if (report === 'landing_page') {
                 report = $rootScope.philoConfig.search_reports[0];
             } else if (report === "collocation") {
@@ -55,6 +55,12 @@
                     value: value,
                     label: label
                 });
+            }
+            // Note (thawsitt): Triggering click when report type is changed
+            if (shouldTriggerSearch && $rootScope.formData.q) {
+                $timeout(function() {
+                    angular.element('.input-group-btn #button-search').trigger('click');
+                }, 0);
             }
             return reports
         }

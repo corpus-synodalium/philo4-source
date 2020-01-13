@@ -100,9 +100,10 @@ def get_start_end_date(db, config, start_date=None, end_date=None):
             else:
                 pass
     min_date = min(dates)
+    # Note (thawsitt): Setting default range to 1200-1400
     if not start_date:
-        start_date = min_date
+        start_date = 1200
     max_date = max(dates)
     if not end_date:
-        end_date = max_date
+        end_date = 1400
     return start_date, end_date

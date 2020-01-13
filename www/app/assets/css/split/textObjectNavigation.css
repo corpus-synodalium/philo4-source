@@ -677,7 +677,7 @@ b.headword[rend=center] {
   z-index: 9999;
   background: #212121;
   min-width: 250px;
-  max-width: 25%;
+  max-width: 30%;
   padding: 20px;
   overflow-y: scroll;
   color: #fff;
@@ -697,7 +697,7 @@ b.headword[rend=center] {
   -webkit-transform: translateX(-100%);
 }
 
-#metadata-panel h2 {
+#metadata-panel-header {
     padding-left: 5px;
     margin-bottom: 30px;
 }
@@ -731,6 +731,11 @@ table.metadata-table td {
     vertical-align: top;
     padding: 10px 5px 0 5px;
     font-size: 1.5rem;
+}
+
+/*source links in metadata table*/
+table.metadata-table td.metadata-source-link {
+    padding: 10px 5px 10px 5px;
 }
 
 table.metadata-table tr {

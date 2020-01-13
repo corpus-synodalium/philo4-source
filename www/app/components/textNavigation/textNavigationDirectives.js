@@ -84,13 +84,25 @@
                         var colonIndex = text.indexOf(':');
                         var key = text.substring(3, colonIndex);
                         var value = text.substring(colonIndex + 2);
+                        // Convert links in Source_URL and Source_URL2
+                        var getSourceTableRow = function(text, value) {
+                            var url = value.substring(0, value.length - 4);
+                            var link = '<a class="link-on-dark" href="' + url + '" target="_blank">link</a>';
+                            return '<tr><td class="metadata-source-link">' + text + '</td><td class="metadata-source-link">' + link + '</td></tr>';
+                        }
+                        if (key === 'Source_URL') {
+                            return getSourceTableRow('Source 1', value);
+                        } else if (key === 'Source_URL2') {
+                            return getSourceTableRow('Source 2', value);
+                        }
                         return '<tr><td>' + key + '</td><td>' + value + '</td></tr>';
                     }).reduce(function(combined, curr) {
                         return combined.concat(curr);
                     }, '');
 
                     scope.metadataObject = {};
-                    scope.metadataObject.text = '<h2>Metadata</h2><table class="metadata-table"><tbody>' +
+                    var linkToGuide = '<p>For further guidance, click <a href="https://corpus-synodalium.com/pages/documentation.html" target="_blank" class="link-on-dark">here</a>.</p>';
+                    scope.metadataObject.text = '<div id="metadata-panel-header"><h2>Metadata</h2>' + linkToGuide + '</div><table class="metadata-table"><tbody>' +
                         replacedPTags + '</tbody></table>';
                 })
                 .catch(function(response) {

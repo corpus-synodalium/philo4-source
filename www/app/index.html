@@ -25,18 +25,18 @@
         <div class="navbar navbar-inverse navbar-static-top" role="navigation">
             <div class="container-fluid">
                 <div class="navbar-right">
-                    <a ng-href="{{::philoConfig.link_to_home_page}}" ng-if="philoConfig.link_to_home_page != ''">Go to home page</a>
-                    <a href="https://artfl-project.uchicago.edu/philologic4">PhiloLogic4</a>
+                    <a class="link-on-dark" ng-href="{{::philoConfig.link_to_home_page}}" ng-if="philoConfig.link_to_home_page != ''">Go to home page</a>
+                    <a class="link-on-dark" href="https://artfl-project.uchicago.edu/philologic4">PhiloLogic4</a>
                 </div>
                 <div class="navbar-left">
-                    <a href="https://corpus-synodalium.com/">Project Homepage</a>
-                    <a href="https://corpus-synodalium.com/pages/documentation.html">User Guide</a>
+                    <a class="link-on-dark" href="https://corpus-synodalium.com/">Project Homepage</a>
+                    <a class="link-on-dark" href="https://corpus-synodalium.com/pages/documentation.html">User Guide</a>
                 </div>
                 <div class="navbar-header">
-                    <a href="" class="navbar-brand" title="$DBNAME" ng-click="PhiloMain.backToHome()">$DBNAME</a>
+                    <a href="" class="navbar-brand link-on-dark" title="$DBNAME" ng-click="PhiloMain.backToHome()">$DBNAME</a>
                     <h4 style="color: white">Local Ecclesiastical Legislation in Medieval Europe / Législations ecclésiastiques locales dans l’Europe médiévale</h4>
                     <div style="position: relative" ng-if="philoConfig.report_error_link != ''">
-                        <a id="header-report-error" target="_blank" ng-href="{{ philoConfig.report_error_link }}">Report Error</a>
+                        <a id="header-report-error" class="link-on-dark" target="_blank" ng-href="{{ philoConfig.report_error_link }}">Report Error</a>
                     </div>
                 </div>
             </div>

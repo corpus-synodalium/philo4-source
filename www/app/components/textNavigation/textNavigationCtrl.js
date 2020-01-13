@@ -138,7 +138,6 @@
 
         vm.toggleMetadataPanel = function(e) {
             vm.showMetadataPanel = !vm.showMetadataPanel;
-            e.target.className = (vm.showMetadataPanel) ? "toggled" : "";
             angular.element('#text-obj-content')[0].style.marginLeft = (vm.showMetadataPanel) ? "30%" : "";
             angular.element('#text-obj-content')[0].style.minWidth = (vm.showMetadataPanel) ? "40vw" : "";
         }

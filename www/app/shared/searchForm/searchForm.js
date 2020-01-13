@@ -32,7 +32,7 @@
                 collocWordNum: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
                 year_interval: philoConfig.time_series_interval
             };
-            vm.toggleForm();
+            $location.url(URL.objectToUrlString($rootScope.formData));
         }
 
         vm.submit = function() {
