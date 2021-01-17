@@ -101,7 +101,7 @@
                     }, '');
 
                     scope.metadataObject = {};
-                    var linkToGuide = '<p>For further guidance, click <a href="https://corpus-synodalium.com/pages/documentation.html" target="_blank" class="link-on-dark">here</a>.</p>';
+                    var linkToGuide = '<p>For further guidance, click <a href="https://corpus-synodalium.com/documentation" target="_blank" class="link-on-dark">here</a>.</p>';
                     scope.metadataObject.text = '<div id="metadata-panel-header"><h2>Metadata</h2>' + linkToGuide + '</div><table class="metadata-table"><tbody>' +
                         replacedPTags + '</tbody></table>';
                 })

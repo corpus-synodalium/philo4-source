@@ -54,6 +54,10 @@ a.link-on-dark {
     color: #fff !important;
 }
 
+a.link-on-dark + a.link-on-dark {
+    margin-left: 4px;
+}
+
 a.link-on-dark:hover {
     color: #bdc9d4 !important;
 }
